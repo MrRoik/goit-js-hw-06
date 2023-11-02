@@ -16,11 +16,11 @@
 
 
 const textInput = document.querySelector("#validation-input");
-textInput.addEventListener("blur", verification);  //  додаємо слухача
+//textInput.addEventListener("blur", verification);  //  додаємо слухача
 
 function verification(event) {  // створюєм функцію для перевірки
-  const inputDataLength = Number(textInput.dataset.length);  // створили змінну, якій присвоюємо число з нашого інпуту
-  const inputValueLength = Number(textInput.value.length);  // створили змінну, якій присвоюємо число, що утворюється з довжини введених символів користувачем
+  const inputDataLength = Number(textInput.dataset.length);  // створив змінну, якій присвоюємо число з нашого інпуту
+  const inputValueLength = textInput.value.trim().length;  // створив змінну, якій присвоюємо число, що утворюється з довжини введених символів користувачем
 
   if (inputValueLength === inputDataLength) {
     textInput.classList.add("valid"); 
@@ -30,3 +30,5 @@ function verification(event) {  // створюєм функцію для пер
     textInput.classList.add("invalid");
   }
 }
+
+textInput.addEventListener("blur", verification);  //  додаємо слухача
