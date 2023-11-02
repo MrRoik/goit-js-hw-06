@@ -9,9 +9,10 @@
 */
 
 const checkInput = document.getElementById("font-size-control");
+const textSlider = document.getElementById("text");
 
-const textSlider = document.getElementById("text")
+function currentSliderSize(event) {
+    textSlider.style.fontSize = event.currentTarget.value + 'px';
+}
 
-
-
-checkInput.addEventListener("move", sliderCheck)
+checkInput.addEventListener("input", currentSliderSize)
