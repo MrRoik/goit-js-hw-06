@@ -15,7 +15,7 @@ const handleClickName = (eve) => {
     outputName.innerHTML = eve.currentTarget.value;
     return;
   }
-    inputName.innerHTML = "Anonymous";
+    outputName.innerHTML = "Anonymous";
 }
 
 inputName.addEventListener("input", handleClickName);
