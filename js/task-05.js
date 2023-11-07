@@ -9,9 +9,13 @@
 
 const inputName = document.getElementById("name-input");
 const outputName = document.getElementById("name-output");
+
 const handleClickName = (eve) => {
-    outputName.textContent = inputName.value !== ""
-        ? eve.currentTarget.value
-        : "Anonymous";
+    if (eve.currentTarget.value !== "") {
+    outputName.innerHTML = eve.currentTarget.value;
+    return;
+  }
+    inputName.innerHTML = "Anonymous";
 }
-inputName.addEventListener("click", handleClickName);
+
+inputName.addEventListener("input", handleClickName);
